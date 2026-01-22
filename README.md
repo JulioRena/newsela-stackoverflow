@@ -10,9 +10,8 @@ All analyses were performed using SQL only, following an analytics-engineeringâ€
 
 #### Tables used:
 
-posts_questions
-
-posts_answers
+* posts_questions
+* posts_answers
 
 ### Exploratory Data Analysis (EDA) Observations
 
@@ -24,3 +23,18 @@ An initial inspection of the dataset showed that there are no records for the ac
 As a result, all queries define the current year dynamically as the latest year available in the dataset.
 This approach ensures consistency and prevents filtering on a year with incomplete or missing data.
 
+#### 2. Tag Structure Validation
+Exploratory analysis confirmed that Stack Overflow tags are stored as a pipe-delimited string (|), rather than as an array.
+Based on this observation, all tag-based analyses explicitly:
+
+* Split tags using SPLIT(tags, '|')
+* Filter for single-tag questions.
+
+This ensures that comparisons between tags (e.g., python vs dbt) are not confounded by multi-tag interactions.
+
+### 3. Minimum Volume Threshold for Statistical Relevance
+
+During the analysis, it was observed that simply ordering results by metrics such as answer rate or accepted answer rate often surfaces tags or segments with very small sample sizes, leading to misleading conclusions.
+
+To mitigate this, a minimum volume threshold was applied consistently across queries.
+This ensures that reported results reflect patterns supported by a sufficient number of observations rather than noise from low-frequency cases.
