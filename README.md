@@ -86,3 +86,19 @@ This ensures that reported results reflect patterns supported by a sufficient nu
   * question score
 
   * time to first answer
+
+## Technical Approach
+
+* 100% SQL-based analysis using Google BigQuery
+
+* Modular query structure using CTEs for clarity
+
+* Explicit feature engineering within SQL
+
+* Defensive querying using SAFE_DIVIDE and volume thresholds
+
+* All queries are executable and documented with inline comments
+
+## Notes
+
+This analysis prioritizes interpretability and statistical reliability over overly complex modeling, aligning with best practices for analytics engineering workflows.
