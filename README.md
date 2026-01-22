@@ -45,9 +45,9 @@ This ensures that reported results reflect patterns supported by a sufficient nu
 
 * Identifies tags (and tag combinations) that lead to:
 
-** the highest number of answers
+  * the highest number of answers
 
-** the highest accepted answer rate
+  * the highest accepted answer rate
 
 * Includes both best- and worst-performing tags
 
@@ -59,30 +59,30 @@ This ensures that reported results reflect patterns supported by a sufficient nu
 
 * Includes:
 
-** year-over-year trends (last 10 years)
+  * year-over-year trends (last 10 years)
 
-** aggregated comparison over the full period
+  * aggregated comparison over the full period
 
 * Metrics include:
 
-** question-to-answer ratio
+  * question-to-answer ratio
 
-** accepted answer rate
+  * accepted answer rate
 
 ### Prompt 3 — Post Quality Correlates
 
 * Explores non-tag-related post attributes correlated with:
 
-** higher answer rates
+  * higher answer rates
 
-** higher accepted answer rates
+  * higher accepted answer rates
 
 * Features include:
 
-** question length
+  * question length
 
-** presence of code snippets
+  * presence of code snippets
 
-** question score
+  * question score
 
-** time to first answer
+  * time to first answer
