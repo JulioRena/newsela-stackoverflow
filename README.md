@@ -32,9 +32,57 @@ Based on this observation, all tag-based analyses explicitly:
 
 This ensures that comparisons between tags (e.g., python vs dbt) are not confounded by multi-tag interactions.
 
-### 3. Minimum Volume Threshold for Statistical Relevance
+#### 3. Minimum Volume Threshold for Statistical Relevance
 
 During the analysis, it was observed that simply ordering results by metrics such as answer rate or accepted answer rate often surfaces tags or segments with very small sample sizes, leading to misleading conclusions.
 
 To mitigate this, a minimum volume threshold was applied consistently across queries.
 This ensures that reported results reflect patterns supported by a sufficient number of observations rather than noise from low-frequency cases.
+
+
+## Analysis Overview
+### Prompt 1 — Tag-Level Performance
+
+* Identifies tags (and tag combinations) that lead to:
+
+** the highest number of answers
+
+** the highest accepted answer rate
+
+* Includes both best- and worst-performing tags
+
+* Focuses on the most recent year available in the dataset
+
+### Prompt 2 — Python vs DBT Comparison
+
+* Analyzes questions tagged exclusively with python or dbt
+
+* Includes:
+
+** year-over-year trends (last 10 years)
+
+** aggregated comparison over the full period
+
+* Metrics include:
+
+** question-to-answer ratio
+
+** accepted answer rate
+
+### Prompt 3 — Post Quality Correlates
+
+* Explores non-tag-related post attributes correlated with:
+
+** higher answer rates
+
+** higher accepted answer rates
+
+* Features include:
+
+** question length
+
+** presence of code snippets
+
+** question score
+
+** time to first answer
